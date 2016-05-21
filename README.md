@@ -4,7 +4,7 @@
 
 由于汉化工作需要大量的人力， 所以中文版的版本会比官方的版本稍低， 如果刻意最求最新版， 请使用官方的 GitLab Docker 镜像。
 
-如果发现汉化的问题， 请向 [larryli](https://gitlab.com/larryli/gitlab) 反应。
+如果发现汉化的问题， 请向 [larryli](https://gitlab.com/larryli/gitlab) 反映。
 
 ## 获取镜像
 
