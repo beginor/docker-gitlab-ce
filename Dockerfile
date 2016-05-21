@@ -1,11 +1,11 @@
-FROM gitlab/gitlab-ce:8.7.4-ce.0
+FROM gitlab/gitlab-ce:8.7.5-ce.0
 
 MAINTAINER beginor <beginor@qq.com>
 
 ENV TMPDIR=/tmp/gitlab-zh
 ENV GITLAB_BRUNCH=8-7
 
-# Enabling use DNS in ssh for git clone
+# clone && apply zh patch.
 RUN git clone https://gitlab.com/larryli/gitlab.git $TMPDIR && \
     cd $TMPDIR && \
     git diff origin/8-7-stable..8-7-zh > $TMPDIR/8-7-zh.diff && \
