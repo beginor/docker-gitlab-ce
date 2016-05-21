@@ -21,7 +21,7 @@ sudo mkdir -p /mnt/sda1/gitlab/etc
 sudo mkdir -p /mnt/sda1/gitlab/log
 sudo mkdir -p /mnt/sda1/gitlab/data
 ```
-准备好这三个目录之后， 就可以开始运行 Docker 镜像了。 我的建议时使用`unless-stopped` 作为重启策略， 因为这样可以手工停止容器， 方便维护。
+准备好这三个目录之后， 就可以开始运行 Docker 镜像了。 我的建议是使用`unless-stopped` 作为重启策略， 因为这样可以手工停止容器， 方便维护。
 
 完整的运行命令如下：
 
