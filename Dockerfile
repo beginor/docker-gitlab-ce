@@ -8,8 +8,8 @@ ENV GITLAB_BRUNCH=8-7
 # clone && apply zh patch.
 RUN git clone https://gitlab.com/larryli/gitlab.git $TMPDIR && \
     cd $TMPDIR && \
-    git diff origin/8-7-stable..8-7-zh > $TMPDIR/8-7-zh.diff && \
-    cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/8-7-zh.diff &&\
+    git diff origin/$GITLAB_BRUNCH-stable..$GITLAB_BRUNCH-zh > $TMPDIR/$GITLAB_BRUNCH-zh.diff && \
+    cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_BRUNCH-zh.diff &&\
     rm -rf $TMPDIR
 
 # Expose web & ssh
