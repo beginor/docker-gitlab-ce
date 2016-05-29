@@ -6,7 +6,7 @@ ENV TMPDIR=/tmp/gitlab-zh
 ENV GITLAB_BRUNCH=8-7
 
 # clone && apply zh patch.
-RUN git clone https://gitlab.com/larryli/gitlab.git $TMPDIR && \
+RUN git clone https://gitlab.com/larryli/gitlab.git -b $GITLAB_BRUNCH-zh $TMPDIR && \
     cd $TMPDIR && \
     git diff origin/$GITLAB_BRUNCH-stable..$GITLAB_BRUNCH-zh > $TMPDIR/$GITLAB_BRUNCH-zh.diff && \
     cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_BRUNCH-zh.diff &&\
