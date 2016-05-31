@@ -1,12 +1,12 @@
-FROM gitlab/gitlab-ce:8.7.6-ce.0
+FROM gitlab/gitlab-ce:8.8.2-ce.0
 
 MAINTAINER beginor <beginor@qq.com>
 
 ENV TMPDIR=/tmp/gitlab-zh
-ENV GITLAB_BRUNCH=8-7
+ENV GITLAB_BRUNCH=8-8
 
 # clone && apply zh patch.
-RUN git clone https://gitlab.com/larryli/gitlab.git -b $GITLAB_BRUNCH-zh $TMPDIR && \
+RUN git clone --progress https://gitlab.com/larryli/gitlab.git -b $GITLAB_BRUNCH-zh $TMPDIR && \
     cd $TMPDIR && \
     git diff origin/$GITLAB_BRUNCH-stable..$GITLAB_BRUNCH-zh > $TMPDIR/$GITLAB_BRUNCH-zh.diff && \
     cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_BRUNCH-zh.diff &&\
