@@ -1,4 +1,4 @@
-FROM gitlab/gitlab-ce:8.8.3-ce.0
+FROM gitlab/gitlab-ce:8.8.5-ce.1
 
 MAINTAINER beginor <beginor@qq.com>
 
