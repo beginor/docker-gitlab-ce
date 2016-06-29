@@ -40,7 +40,7 @@ docker run \
 
 ## 升级
 
-参照官方的说明， 将原来的容器停止， 然后删除：
+小版本升级（例如从 8.8.2 升级到 8.8.3）， 参照官方的说明， 将原来的容器停止， 然后删除：
 
 ```sh
 docker stop gitlab
@@ -69,6 +69,13 @@ docker run \
 ```
 
 GitLab 在初次运行的时候会自动升级， 为了预防万一， 还是建议先备份一下 `/mnt/sda1/gitlab/` 这个目录。
+
+大版本升级（例如从 8.7.x 升级到 8.8.x）用上面的操作有可能会出现错误， 如果出现错误可以尝试登录到容器内部， 可以用 `docker exec` ， 也可以用 ssh ， 依次执行下面的命令：
+
+```sh
+gitlab-ctl reconfigure
+gitlab-ctl restart
+```
 
 ## 更多
 
