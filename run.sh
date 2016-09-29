@@ -6,7 +6,7 @@ docker run \
     --publish 8080:80 \
     --name gitlab \
     --restart unless-stopped \
-    --volume /mnt/sda1/gitlab/etc:/etc/gitlab \
-    --volume /mnt/sda1/gitlab/log:/var/log/gitlab \
-    --volume /mnt/sda1/gitlab/data:/var/opt/gitlab \
-    beginor/gitlab-ce
+    --volume $(pwd)/volumes/etc:/etc/gitlab \
+    --volume $(pwd)/volumes/log:/var/log/gitlab \
+    --volume $(pwd)/volumes/data:/var/opt/gitlab \
+    beginor/gitlab-ce:8.8.5-ce.1
