@@ -1,15 +1,17 @@
-FROM gitlab/gitlab-ce:8.8.5-ce.1
+FROM gitlab/gitlab-ce:8.13.5-ce.0
 
 MAINTAINER beginor <beginor@qq.com>
 
-ENV TMPDIR=/tmp/gitlab-zh
-ENV GITLAB_BRUNCH=8-8
+ENV TMPDIR=/tmp/gitlab.zh
+ENV GITLAB_VERSION=v8.13.5
 
 # clone && apply zh patch.
-RUN git clone --progress https://gitlab.com/larryli/gitlab.git -b $GITLAB_BRUNCH-zh $TMPDIR && \
+RUN git clone --progress --verbose -b $GITLAB_VERSION https://gitlab.com/gitlab-org/gitlab-ce.git $TMPDIR && \
     cd $TMPDIR && \
-    git diff origin/$GITLAB_BRUNCH-stable..$GITLAB_BRUNCH-zh > $TMPDIR/$GITLAB_BRUNCH-zh.diff && \
-    cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_BRUNCH-zh.diff &&\
+    git remote add xhang https://gitlab.com/xhang/gitlab.git && \
+    git fetch --progress --verbose xhang --tag $GITLAB_VERSION.zh && \
+    git diff $GITLAB_VERSION..$GITLAB_VERSION.zh > $TMPDIR/$GITLAB_VERSION.zh.diff && \
+    cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_VERSION.zh.diff && \
     rm -rf $TMPDIR
 
 # Expose web & ssh
