@@ -6,9 +6,11 @@ ENV TMPDIR=/tmp/gitlab-zh
 ENV GITLAB_VERSION=v8.13.6
 
 # clone && apply zh patch.
-RUN git clone --progress https://gitlab.com/xhang/gitlab.git -b $GITLAB_VERSION-zh $TMPDIR && \
+RUN git clone --progress --verbose -b $GITLAB_VERSION https://gitlab.com/gitlab-org/gitlab-ce.git $TMPDIR && \
     cd $TMPDIR && \
-    git diff origin/$GITLAB_VERSION..$GITLAB_VERSION-zh > $TMPDIR/$GITLAB_VERSION-zh.diff && \
+    git remote add xhang https://gitlab.com/xhang/gitlab.git && \
+    git fetch --progress --verbose xhang --tag $GITLAB_VERSION-zh && \
+    git diff $GITLAB_VERSION..$GITLAB_VERSION-zh > $TMPDIR/$GITLAB_VERSION-zh.diff && \
     cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_VERSION-zh.diff && \
     rm -rf $TMPDIR
 
