@@ -6,10 +6,10 @@ ENV TMPDIR=/tmp/gitlab-zh
 ENV GITLAB_VERSION=v8.13.6
 
 # clone && apply zh patch.
-RUN git clone --progress https://gitlab.com/xhang/gitlab.git -b $GITLAB_BRUNCH-zh $TMPDIR && \
+RUN git clone --progress https://gitlab.com/xhang/gitlab.git -b $GITLAB_VERSION-zh $TMPDIR && \
     cd $TMPDIR && \
-    git diff origin/$GITLAB_BRUNCH..$GITLAB_BRUNCH-zh > $TMPDIR/$GITLAB_BRUNCH-zh.diff && \
-    cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_BRUNCH-zh.diff && \
+    git diff origin/$GITLAB_VERSION..$GITLAB_VERSION-zh > $TMPDIR/$GITLAB_VERSION-zh.diff && \
+    cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_VERSION-zh.diff && \
     rm -rf $TMPDIR
 
 # Expose web & ssh
