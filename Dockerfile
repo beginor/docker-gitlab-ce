@@ -1,9 +1,9 @@
-FROM gitlab/gitlab-ce:8.13.6-ce.0
+FROM gitlab/gitlab-ce:8.14.3-ce.0
 
 MAINTAINER beginor <beginor@qq.com>
 
 ENV TMPDIR=/tmp/gitlab-zh
-ENV GITLAB_VERSION=v8.13.6
+ENV GITLAB_VERSION=v8.14.3
 
 # clone && apply zh patch.
 RUN git clone --progress --verbose -b $GITLAB_VERSION https://gitlab.com/gitlab-org/gitlab-ce.git $TMPDIR && \

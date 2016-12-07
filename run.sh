@@ -9,4 +9,4 @@ docker run \
     --volume $(pwd)/volumes/etc:/etc/gitlab \
     --volume $(pwd)/volumes/log:/var/log/gitlab \
     --volume $(pwd)/volumes/data:/var/opt/gitlab \
-    beginor/gitlab-ce:8.13.6-ce.0
+    beginor/gitlab-ce:8.14.3-ce.0
