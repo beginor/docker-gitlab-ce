@@ -1,15 +1,13 @@
-FROM gitlab/gitlab-ce:8.14.3-ce.0
+FROM gitlab/gitlab-ce:8.14.5-ce.0
 
 MAINTAINER beginor <beginor@qq.com>
 
 ENV TMPDIR=/tmp/gitlab-zh
-ENV GITLAB_VERSION=v8.14.3
+ENV GITLAB_VERSION=v8.14.5
 
 # clone && apply zh patch.
-RUN git clone --progress --verbose -b $GITLAB_VERSION https://gitlab.com/gitlab-org/gitlab-ce.git $TMPDIR && \
+RUN git clone --progress --verbose https://gitlab.com/xhang/gitlab.git $TMPDIR && \
     cd $TMPDIR && \
-    git remote add xhang https://gitlab.com/xhang/gitlab.git && \
-    git fetch --progress --verbose xhang --tag $GITLAB_VERSION-zh && \
     git diff $GITLAB_VERSION..$GITLAB_VERSION-zh > $TMPDIR/$GITLAB_VERSION-zh.diff && \
     cd /opt/gitlab/embedded/service/gitlab-rails && git apply $TMPDIR/$GITLAB_VERSION-zh.diff && \
     rm -rf $TMPDIR
