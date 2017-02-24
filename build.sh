@@ -1,3 +1,3 @@
 #! /bin/bash
 
-docker build -t beginor/gitlab-ce:8.15.5-ce.0 .
+docker build -t beginor/gitlab-ce:8.15.7-ce.0 .
