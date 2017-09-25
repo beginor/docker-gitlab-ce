@@ -9,7 +9,7 @@
 ## 获取镜像
 
 ```sh
-docker pull docker pull beginor/gitlab-ce:9.5.1-ce.0
+docker pull docker pull beginor/gitlab-ce:9.5.5-ce.0
 ```
 
 ## 运行
