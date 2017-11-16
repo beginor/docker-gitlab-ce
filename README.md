@@ -9,7 +9,7 @@
 ## 获取镜像
 
 ```sh
-docker pull docker pull beginor/gitlab-ce:10.1.0-ce.0
+docker pull beginor/gitlab-ce:10.1.0-ce.0
 ```
 
 ## 运行
@@ -50,7 +50,7 @@ docker rm gitlab
 然后重新拉一个新版本的镜像下来， 
 
 ```sh
-docker pull docker pull beginor/gitlab-ce
+docker pull beginor/gitlab-ce
 ```
 
 还使用原来的运行命令运行， 
