@@ -9,7 +9,7 @@
 ## 获取镜像
 
 ```sh
-docker pull beginor/gitlab-ce:10.1.3-ce.0
+docker pull beginor/gitlab-ce:10.2.3-ce.0
 ```
 
 ## 运行
@@ -35,7 +35,7 @@ docker run \
     --volume /mnt/sda1/gitlab/etc:/etc/gitlab \
     --volume /mnt/sda1/gitlab/log:/var/log/gitlab \
     --volume /mnt/sda1/gitlab/data:/var/opt/gitlab \
-    beginor/gitlab-ce:10.1.3-ce.0
+    beginor/gitlab-ce:10.2.3-ce.0
 ```
 
 ## 升级
@@ -50,7 +50,7 @@ docker rm gitlab
 然后重新拉一个新版本的镜像下来， 
 
 ```sh
-docker pull beginor/gitlab-ce:10.1.3-ce.0
+docker pull beginor/gitlab-ce:10.2.3-ce.0
 ```
 
 还使用原来的运行命令运行， 
@@ -65,7 +65,7 @@ docker run \
     --volume /mnt/sda1/gitlab/etc:/etc/gitlab \
     --volume /mnt/sda1/gitlab/log:/var/log/gitlab \
     --volume /mnt/sda1/gitlab/data:/var/opt/gitlab \
-    beginor/gitlab-ce:10.1.3-ce.0
+    beginor/gitlab-ce:10.2.3-ce.0
 ```
 
 GitLab 在初次运行的时候会自动升级， 为了预防万一， 还是建议先备份一下 `/mnt/sda1/gitlab/` 这个目录。
