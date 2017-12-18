@@ -1,4 +1,4 @@
-FROM gitlab/gitlab-ce:10.2.3-ce.0
+FROM gitlab/gitlab-ce:10.2.4-ce.0
 
 LABEL MAINTAINER="beginor <beginor@qq.com>"
 
