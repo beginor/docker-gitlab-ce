@@ -1,9 +1,9 @@
-FROM gitlab/gitlab-ce:10.7.3-ce.0
+FROM gitlab/gitlab-ce:10.7.5-ce.0
 
 LABEL MAINTAINER="beginor <beginor@qq.com>"
 
 ENV TMPDIR=/tmp/gitlab-zh
-ENV GITLAB_VERSION=v10.7.3
+ENV GITLAB_VERSION=v10.7.5
 
 # clone && apply zh patch.
 RUN git clone --progress --verbose https://gitlab.com/xhang/gitlab.git $TMPDIR && \
