@@ -2,7 +2,7 @@
 
 gitlab 官方已经开始支持多语言， 而且也提供了 docker 镜像， 因此这个 docker 镜像不再维护， 请大家切换到官方镜像， 感谢大家的支持。
 
-> 设置方法： 依次点击工具栏最右侧用户头像 》 `Settings` 》 `Preferred language` ， 然后选择 `简体中文` 即可。
+> 切换到官方镜像之后， 中文设置方法： 依次点击工具栏最右侧用户头像 》 `Settings` 》 `Preferred language` ， 然后选择 `简体中文` 即可。
 
 # GitLab 中文社区版 Docker 镜像
 
